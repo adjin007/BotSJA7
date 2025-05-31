@@ -1,0 +1,13 @@
+[
+  {
+    "user_id": 5475423864,
+    "type": "PREMIUM",
+    "date": "2025-05-29 15:18:22",
+    "prediction": {
+      "heure_min": "15:30",
+      "heure_max": "15:31",
+      "coefficient": "20X",
+      "assurance": "6X"
+    }
+  }
+]

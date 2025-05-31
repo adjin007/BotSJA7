@@ -1,0 +1,4 @@
+python-telegram-bot==20.7
+Flask
+pytz
+zoneinfo; python_version>="3.9"

@@ -1,0 +1,14 @@
+[
+  {
+    "heure_min": "15:30",
+    "heure_max": "15:31",
+    "coefficient": "20X",
+    "assurance": "6X"
+  },
+  {
+    "heure_min": "14:07",
+    "heure_max": "14:08",
+    "coefficient": "25X",
+    "assurance": "7X"
+  }
+]
