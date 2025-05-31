@@ -26,7 +26,7 @@ from telegram.ext import (
     filters,
 )
 
-BOT_TOKEN = "7207009417:AAEpfkVCf-JK4XBZ78AAr9-vUXtVgwCKbCk"
+BOT_TOKEN = "7207009417:AAGz4SC9fgk-zq08otj5r2o2aRxd5SpQXjA"
 CANAL_ID = -1002467198347
 ADMIN_ID = 5068784805
 WHITELIST_FILE = "whitelist.json"
