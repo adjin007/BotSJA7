@@ -50,5 +50,45 @@
     {
         "cote": "5.2X",
         "assurance": "2.2X"
+    },
+    {
+        "cote": "4.05X",
+        "assurance": "2X"
+    },
+    {
+        "cote": "7X",
+        "assurance": "2.5X"
+    },
+    {
+        "cote": "3X",
+        "assurance": "2X"
+    },
+    {
+        "cote": "3X",
+        "assurance": "1.8X"
+    },
+    {
+        "cote": "4X",
+        "assurance": "2X"
+    },
+    {
+        "cote": "4.06X",
+        "assurance": "2.08X"
+    },
+    {
+        "cote": "5.6X",
+        "assurance": "2.7X"
+    },
+    {
+        "cote": "4.6X",
+        "assurance": "2.8X"
+    },
+    {
+        "cote": "4.7",
+        "assurance": "2.9X"
+    },
+    {
+        "cote": "4.9X",
+        "assurance": "2.09X"
     }
 ]
