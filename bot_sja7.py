@@ -276,7 +276,7 @@ async def rejeter(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     try:
         user_id = int(context.args[0])
-        await context.bot.send_message(user_id, "❌ Votre demande a été rejetée. Veuillez reprendre depuis le début avec le bon code promo.")
+        await context.bot.send_message(user_id, "❌ Votre demande a été rejetée. Veuillez reprendre depuis le début avec le bon code promo et recharger votre compte du minimum dit dans les conditions.")
         await update.message.reply_text("Rejet envoyé.")
     except:
         await update.message.reply_text("❌ Format attendu : /rejeter [id]")
