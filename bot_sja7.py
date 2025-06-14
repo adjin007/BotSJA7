@@ -133,6 +133,30 @@ def enregistrer_historique_global(user_id: int, type_signal: str, contenu: dict)
 
     with open(HISTORIQUE_GLOBAL_FILE, "w") as f:
         json.dump(historique, f, indent=2)
+        
+# Fonction de blocage utilisateur
+                 
+BLACKLIST_FILE = "blacklist.json"
+def ajouter_a_blacklist(user_id):
+    if not os.path.exists(BLACKLIST_FILE):
+        with open(BLACKLIST_FILE, "w") as f:
+            json.dump([], f)
+
+    with open(BLACKLIST_FILE, "r") as f:
+        blacklist = json.load(f)
+
+    if str(user_id) not in blacklist:
+        blacklist.append(str(user_id))
+
+    with open(BLACKLIST_FILE, "w") as f:
+        json.dump(blacklist, f)
+
+def est_dans_blacklist(user_id):
+    if not os.path.exists(BLACKLIST_FILE):
+        return False
+    with open(BLACKLIST_FILE, "r") as f:
+        blacklist = json.load(f)
+    return str(user_id) in blacklist
 
 #Commande start et bouton de vérification
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -276,11 +300,78 @@ async def rejeter(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     try:
         user_id = int(context.args[0])
-        await context.bot.send_message(user_id, "❌ Votre demande a été rejetée. Veuillez reprendre depuis le début avec le bon code promo et recharger votre compte du minimum dit dans les conditions.")
+        await context.bot.send_message(user_id, "❌ Votre demande a été rejetée. Veuillez reprendre depuis le début avec le bon code promo.")
         await update.message.reply_text("Rejet envoyé.")
     except:
-        await update.message.reply_text("❌ Format attendu : /rejeter [id]")
+        await update.message.reply_text("❌ Format attendu : /rejeter [id]")        
 
+#Commandes bloquer utilisateur
+async def bloquer(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.effective_user.id != ADMIN_ID:
+        await update.message.reply_text("❌ Vous n'êtes pas autorisé à faire ça.")
+        return
+
+    try:
+        user_id = int(context.args[0])
+        ajouter_a_blacklist(user_id)
+        await update.message.reply_text(f"🚫 L'utilisateur {user_id} a été bloqué.")
+        await context.bot.send_message(
+            chat_id=user_id,
+            text="🚫 Vous avez été bloqué de ce bot pour non respect des règles. Contactez l’administrateur si besoin."
+        )
+    except:
+        await update.message.reply_text("❌ Utilisation : /bloquer [user_id]")
+               
+# === COMMANDE ADMIN POUR DÉBLOQUER UN UTILISATEUR ===
+async def debloquer(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.effective_user.id != ADMIN_ID:
+        await update.message.reply_text("❌ Vous n'êtes pas autorisé à utiliser cette commande.")
+        return
+
+    try:
+        user_id = str(context.args[0])
+
+        # Charger le fichier de blacklist
+        if os.path.exists(BLACKLIST_FILE):
+            with open(BLACKLIST_FILE, "r") as f:
+                blacklist = json.load(f)
+        else:
+            blacklist = []
+
+        if user_id in blacklist:
+            blacklist.remove(user_id)
+            with open(BLACKLIST_FILE, "w") as f:
+                json.dump(blacklist, f)
+            await update.message.reply_text(f"✅ L'utilisateur {user_id} a été débloqué.")
+        else:
+            await update.message.reply_text("ℹ Cet utilisateur n'était pas bloqué.")
+    except:
+        await update.message.reply_text("❌ Utilisation : /debloquer [user_id]")
+        
+# === COMMANDE ADMIN POUR AFFICHER LA WHITELIST AVEC USERNAMES ===
+async def voir_whitelist(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.effective_user.id != ADMIN_ID:
+        return
+
+    if not os.path.exists(WHITELIST_FILE):
+        await update.message.reply_text("📁 Aucun utilisateur validé pour le moment.")
+        return
+
+    with open(WHITELIST_FILE, "r") as f:
+        whitelist = json.load(f)
+
+    if not whitelist:
+        await update.message.reply_text("📁 Aucun utilisateur validé pour le moment.")
+        return
+
+    # Construction du message
+    message = "<b>📋 Liste des utilisateurs validés :</b>\n\n"
+    for user_id in whitelist:
+        message += f"• <code>{user_id}</code>\n"
+
+    await update.message.reply_text(message, parse_mode="HTML")
+        
+# Commande pour ajouter crédit             
 async def ajouter_credit_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.effective_user.id != ADMIN_ID:
         await update.message.reply_text("❌ Vous n'êtes pas autorisé à utiliser cette commande.")
@@ -301,11 +392,15 @@ async def ajouter_credit_command(update: Update, context: ContextTypes.DEFAULT_T
         await update.message.reply_text("❌ Utilisation : /credit [user_id] [nombre]")
 
 #Fonctions pour les boutons du menu principal
-
 async def bouton_prediction_fun(update, context):
     import time  # À mettre en haut si pas encore importé
     chat_id = update.effective_chat.id
     user_id = update.effective_user.id
+    
+    # Vérification dans la blacklist
+    if est_dans_blacklist(update.effective_user.id):
+        await update.message.reply_text("🚫 Vous avez été bloqué de ce bot pour non respect des règles.")
+        return
 
     # 1. Vérification de la whitelist
     if not est_dans_whitelist(user_id):
@@ -387,6 +482,11 @@ PREMIUM_FILE = "premium_predictions.json"
 async def bouton_prediction_premium(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat_id = update.effective_chat.id
     user_id = update.effective_user.id
+    
+    # Vérification dans la blacklist
+    if est_dans_blacklist(update.effective_user.id):
+        await update.message.reply_text("🚫 Vous avez été bloqué de ce bot pour non respect des règles.")
+        return
 
     # Vérification dans la whitelist
     if not est_dans_whitelist(user_id):
@@ -533,6 +633,9 @@ if __name__ == "__main__":
     tg_app.add_handler(CallbackQueryHandler(bouton_verification, pattern="^verifier$"))
     tg_app.add_handler(CommandHandler("valider", valider))
     tg_app.add_handler(CommandHandler("rejeter", rejeter))
+    tg_app.add_handler(CommandHandler("bloquer", bloquer))
+    tg_app.add_handler(CommandHandler("debloquer", debloquer))
+    tg_app.add_handler(CommandHandler("whitelist", voir_whitelist))
     tg_app.add_handler(CommandHandler("credit", ajouter_credit_command))
 
     tg_app.add_handler(MessageHandler(filters.TEXT & filters.Regex("^🔥 OBTENIR UNE PRÉDICTION$"), bouton_prediction_fun))
