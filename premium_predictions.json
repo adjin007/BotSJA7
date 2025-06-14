@@ -250,5 +250,275 @@
     "heure_max": "18:19",
     "coefficient": "24.8X",
     "assurance": "7.64X"
+  },
+  {
+    "heure_min": "01:11",
+    "heure_max": "01:12",
+    "coefficient": "30X",
+    "assurance": "10X"
+  },
+  {
+    "heure_min": "01:22",
+    "heure_max": "01:23",
+    "coefficient": "25X",
+    "assurance": "7.4X"
+  },
+  {
+    "heure_min": "01:04",
+    "heure_max": "01:05",
+    "coefficient": "42.5X",
+    "assurance": "8.94X"
+  },
+  {
+    "heure_min": "00:52",
+    "heure_max": "00:53",
+    "coefficient": "40X",
+    "assurance": "8.55X"
+  },
+  {
+    "heure_min": "00:45",
+    "heure_max": "00:46",
+    "coefficient": "24.8X",
+    "assurance": "5X"
+  },
+  {
+    "heure_min": "00:35",
+    "heure_max": "00:36",
+    "coefficient": "18.8X",
+    "assurance": "7.64X"
+  },
+  {
+    "heure_min": "18:43",
+    "heure_max": "18:44",
+    "coefficient": "14.8X",
+    "assurance": "5.64X"
+  },
+  {
+    "heure_min": "18:35",
+    "heure_max": "18:36",
+    "coefficient": "18.8X",
+    "assurance": "7.22X"
+  },
+  {
+    "heure_min": "01:01",
+    "heure_max": "01:02",
+    "coefficient": "50.8X",
+    "assurance": "8.4X"
+  },
+  {
+    "heure_min": "01:08",
+    "heure_max": "01:09",
+    "coefficient": "28.4X",
+    "assurance": "8.64X"
+  },
+  {
+    "heure_min": "01:14",
+    "heure_max": "01:15",
+    "coefficient": "26.41X",
+    "assurance": "9.64X"
+  },
+  {
+    "heure_min": "00:30",
+    "heure_max": "00:31",
+    "coefficient": "26.8X",
+    "assurance": "10X"
+  },
+  {
+    "heure_min": "00:36",
+    "heure_max": "00:37",
+    "coefficient": "40.8X",
+    "assurance": "7.00X"
+  },
+  {
+    "heure_min": "00:46",
+    "heure_max": "00:47",
+    "coefficient": "80.8X",
+    "assurance": "10.64X"
+  },
+  {
+    "heure_min": "17:04",
+    "heure_max": "17:05",
+    "coefficient": "14.8X",
+    "assurance": "6.64X"
+  },
+  {
+    "heure_min": "16:56",
+    "heure_max": "16:57",
+    "coefficient": "18.22X",
+    "assurance": "5.64X"
+  },
+  {
+    "heure_min": "16:45",
+    "heure_max": "16:46",
+    "coefficient": "11.8X",
+    "assurance": "5.54X"
+  },
+  {
+    "heure_min": "16:36",
+    "heure_max": "16:37",
+    "coefficient": "17.2X",
+    "assurance": "5.4X"
+  },
+  {
+    "heure_min": "17:09",
+    "heure_max": "17:10",
+    "coefficient": "16.8X",
+    "assurance": "4.24X"
+  },
+  {
+    "heure_min": "17:04",
+    "heure_max": "17:05",
+    "coefficient": "21.8X",
+    "assurance": "8.74X"
+  },
+  {
+    "heure_min": "16:59",
+    "heure_max": "17:00",
+    "coefficient": "27X",
+    "assurance": "8X"
+  },
+  {
+    "heure_min": "16:50",
+    "heure_max": "16:51",
+    "coefficient": "19X",
+    "assurance": "4.4X"
+  },
+  {
+    "heure_min": "16:21",
+    "heure_max": "16:22",
+    "coefficient": "17.8X",
+    "assurance": "9.4X"
+  },
+  {
+    "heure_min": "23:29",
+    "heure_max": "23:30",
+    "coefficient": "22.8X",
+    "assurance": "10.64X"
+  },
+  {
+    "heure_min": "23:09",
+    "heure_max": "23:10",
+    "coefficient": "25.8X",
+    "assurance": "7.5X"
+  },
+  {
+    "heure_min": "22:58",
+    "heure_max": "22:59",
+    "coefficient": "22.36X",
+    "assurance": "6.5X"
+  },
+  {
+    "heure_min": "22:44",
+    "heure_max": "22:45",
+    "coefficient": "20X",
+    "assurance": "7.5X"
+  },
+  {
+    "heure_min": "20:58",
+    "heure_max": "20:59",
+    "coefficient": "30X",
+    "assurance": "10X"
+  },
+  {
+    "heure_min": "20:35",
+    "heure_max": "20:35",
+    "coefficient": "14.8X",
+    "assurance": "10.5X"
+  },
+  {
+    "heure_min": "20:29",
+    "heure_max": "20:30",
+    "coefficient": "25X",
+    "assurance": "10.5X"
+  },
+  {
+    "heure_min": "19:53",
+    "heure_max": "19:54",
+    "coefficient": "25X",
+    "assurance": "7X"
+  },
+  {
+    "heure_min": "19:27",
+    "heure_max": "19:28",
+    "coefficient": "20X",
+    "assurance": "6X"
+  },
+  {
+    "heure_min": "19:15",
+    "heure_max": "19:16",
+    "coefficient": "24.8X",
+    "assurance": "6.5X"
+  },
+  {
+    "heure_min": "16:49",
+    "heure_max": "16:50",
+    "coefficient": "20.8X",
+    "assurance": "7.5X"
+  },
+  {
+    "heure_min": "16:15",
+    "heure_max": "16:16",
+    "coefficient": "15.8X",
+    "assurance": "8.5X"
+  },
+  {
+    "heure_min": "15:30",
+    "heure_max": "15:31",
+    "coefficient": "25.33X",
+    "assurance": "6.47X"
+  },
+  {
+    "heure_min": "15:06",
+    "heure_max": "15:07",
+    "coefficient": "23.04X",
+    "assurance": "6X"
+  },
+  {
+    "heure_min": "14:40",
+    "heure_max": "14:41",
+    "coefficient": "25X",
+    "assurance": "7.5X"
+  },
+  {
+    "heure_min": "14:35",
+    "heure_max": "14:36",
+    "coefficient": "23.8X",
+    "assurance": "6.5X"
+  },
+  {
+    "heure_min": "14:04",
+    "heure_max": "14:05",
+    "coefficient": "24.8X",
+    "assurance": "10.5X"
+  },
+  {
+    "heure_min": "02:09",
+    "heure_max": "02:10",
+    "coefficient": "35.8X",
+    "assurance": "10X"
+  },
+  {
+    "heure_min": "23:52",
+    "heure_max": "23:53",
+    "coefficient": "25.8X",
+    "assurance": "6.8X"
+  },
+  {
+    "heure_min": "19:45",
+    "heure_max": "19:46",
+    "coefficient": "30X",
+    "assurance": "7X"
+  },
+  {
+    "heure_min": "18:56",
+    "heure_max": "18:57",
+    "coefficient": "16.8X",
+    "assurance": "5.5X"
+  },
+  {
+    "heure_min": "19:02",
+    "heure_max": "19:09",
+    "coefficient": "20.8X",
+    "assurance": "8X"
   }
 ]
