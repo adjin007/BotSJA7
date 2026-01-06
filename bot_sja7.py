@@ -590,7 +590,7 @@ async def bouton_parrainage(update: Update, context: ContextTypes.DEFAULT_TYPE):
          return
     await update.message.reply_text(
         "🎁 INVITEZ DES AMIS POUR RECEVOIR DES RÉCOMPENSES !\n\n"
-        "🔗 Canal Telegram : https://t.me/+34vPKtaBROs2NDA0\n"
+        "🔗 Canal Telegram : https://t.me/+VqK5KU0QE7ZjODg8\n"
         "🔗 Groupe WhatsApp : https://chat.whatsapp.com/LpXOPvR3oVZLj1lhfBz8bQ\n\n"
         "🎉 Plus vous invitez, plus vous êtes récompensé !"
     )
@@ -648,6 +648,7 @@ if __name__ == "__main__":
 
     print("Bot en ligne...")
     tg_app.run_polling()
+
 
 
 
