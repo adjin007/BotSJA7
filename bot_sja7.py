@@ -228,7 +228,7 @@ async def bouton_verification(update: Update, context: ContextTypes.DEFAULT_TYPE
     except Exception as e:
         await context.bot.send_message(
             chat_id=user_id,
-            text="❌ Une erreur est survenue lors de la vérification de votre abonnement.\nMerci de réessayer plus tard."
+            text="❌ Une erreur est survenue lors de la vérification de votre abonnement.\nMerci de réessayer."
         )
         return
 
@@ -647,5 +647,6 @@ if __name__ == "__main__":
 
     print("Bot en ligne...")
     tg_app.run_polling()
+
 
 
