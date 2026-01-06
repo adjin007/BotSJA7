@@ -161,7 +161,7 @@ def est_dans_blacklist(user_id):
 #Commande start et bouton de vérification
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
-        [InlineKeyboardButton("Rejoindre le canal Telegram", url="https://t.me/+34vPKtaBROs2NDA0")],
+        [InlineKeyboardButton("Rejoindre le canal Telegram", url="https://t.me/+VqK5KU0QE7ZjODg8")],
         [InlineKeyboardButton("Rejoindre le groupe WhatsApp", url="https://chat.whatsapp.com/LpXOPvR3oVZLj1lhfBz8bQ")],
         [InlineKeyboardButton("VÉRIFICATION", callback_data="verifier")]
     ]
@@ -221,7 +221,7 @@ async def bouton_verification(update: Update, context: ContextTypes.DEFAULT_TYPE
         if membre.status in ["left", "kicked"]:
             await context.bot.send_message(
                 chat_id=user_id,
-                text="🚫 Vous devez d’abord rejoindre le canal Telegram pour continuer.\n\n👉 [Lien du canal](https://t.me/+34vPKtaBROs2NDA0)",
+                text="🚫 Vous devez d’abord rejoindre le canal Telegram pour continuer.\n\n👉 [Lien du canal](https://t.me/+VqK5KU0QE7ZjODg8)",
                 parse_mode="Markdown"
             )
             return
@@ -647,3 +647,4 @@ if __name__ == "__main__":
 
     print("Bot en ligne...")
     tg_app.run_polling()
+
