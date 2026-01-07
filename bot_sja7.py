@@ -175,8 +175,8 @@ async def bouton_verification(update: Update, context: ContextTypes.DEFAULT_TYPE
     query = update.callback_query
     await query.answer()
     user_id = query.from_user.id
-    ajouter_a_whitelist(user_id)
-    attente_id[user_id] = True
+   # ajouter_a_whitelist(user_id)
+    #attente_id[user_id] = True
 
     await context.bot.send_message(
         chat_id=user_id,
@@ -648,6 +648,7 @@ if __name__ == "__main__":
 
     print("Bot en ligne...")
     tg_app.run_polling()
+
 
 
 
