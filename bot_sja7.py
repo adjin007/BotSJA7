@@ -607,26 +607,26 @@ async def bouton_aide(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "👉 Contacte @The_bigestt ou @SJA7_PCS sur Telegram."
 )
 
-from flask import Flask
-from threading import Thread
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, CallbackQueryHandler, filters
+#from flask import Flask
+#from threading import Thread
+#from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, CallbackQueryHandler, filters
 
 # === SERVEUR FLASK POUR REPLIT ===
-flask_app = Flask('')
-@flask_app.route('/')
-def home():
-    return "Bot SJA7 en ligne !"
+#flask_app = Flask('')
+#@flask_app.route('/')
+#def home():
+ #   return "Bot SJA7 en ligne !"
 
-def run():
-    flask_app.run(host='0.0.0.0', port=8080)
+#def run():
+ #   flask_app.run(host='0.0.0.0', port=8080)
 
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
+#def keep_alive():
+ #   t = Thread(target=run)
+  #  t.start()
 
 # === LANCEMENT DU BOT TELEGRAM ===
 if __name__ == "__main__":
-    keep_alive()
+   # keep_alive()
 
     tg_app = ApplicationBuilder().token(BOT_TOKEN).build()
 
@@ -648,6 +648,7 @@ if __name__ == "__main__":
 
     print("Bot en ligne...")
     tg_app.run_polling()
+
 
 
 
