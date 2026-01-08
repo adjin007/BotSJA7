@@ -286,7 +286,7 @@ async def valider(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         await context.bot.send_message(
             chat_id=user_id,
-            text="✅ Vous êtes maintenant validé !\n\nChoisissez une action ci-dessous :",
+            text="✅ Vous êtes maintenant validé !\n\nChoisissez une des action ci-dessous :",
             reply_markup=reply_markup
         )
 
@@ -648,6 +648,7 @@ if __name__ == "__main__":
 
     print("Bot en ligne...")
     tg_app.run_polling()
+
 
 
 
