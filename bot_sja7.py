@@ -162,7 +162,7 @@ def est_dans_blacklist(user_id):
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("Rejoindre le canal Telegram", url="https://t.me/+VqK5KU0QE7ZjODg8")],
-        [InlineKeyboardButton("Rejoindre le groupe WhatsApp", url="https://chat.whatsapp.com/LpXOPvR3oVZLj1lhfBz8bQ")],
+        [InlineKeyboardButton("Rejoindre le groupe WhatsApp", url="https://whatsapp.com/channel/0029VbAwX6w4dTnLQahLoV1H")],
         [InlineKeyboardButton("VÉRIFICATION", callback_data="verifier")]
     ]
     await update.message.reply_text(
@@ -648,6 +648,7 @@ if __name__ == "__main__":
 
     print("Bot en ligne...")
     tg_app.run_polling()
+
 
 
 
