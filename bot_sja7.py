@@ -26,7 +26,7 @@ from telegram.ext import (
     filters,
 )
 
-BOT_TOKEN = "7207009417:AAGz4SC9fgk-zq08otj5r2o2aRxd5SpQXjA"
+BOT_TOKEN = "8376494600:AAHJedKMXU075lfANlXI1D_9N-wf_BJ17Zs"
 CANAL_ID = -1003586151168
 ADMIN_ID = 5068784805
 WHITELIST_FILE = "whitelist.json"
@@ -648,6 +648,7 @@ if __name__ == "__main__":
 
     print("Bot en ligne...")
     tg_app.run_polling()
+
 
 
 
