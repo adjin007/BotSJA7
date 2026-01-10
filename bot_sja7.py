@@ -1,5 +1,5 @@
 #Imports
-from flask import Flask
+#from flask import Flask
 from threading import Thread
 import os
 import pytz #Pas utiliser pour le moment j'ai utiliser zoneinfo
@@ -648,6 +648,7 @@ if __name__ == "__main__":
 
     print("Bot en ligne...")
     tg_app.run_polling()
+
 
 
 
